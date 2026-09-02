@@ -1,0 +1,30 @@
+# Address database for Indonesia
+# Format: Address1|Address2|City|Province|Zip
+Jl. Sudirman No. 1|Kel. Kebayoran Baru|Jakarta|DKI Jakarta|10220
+Jl. Gatot Subroto No. 8|Kel. Karet Semanggi|Jakarta|DKI Jakarta|10310
+Jl. MH Thamrin No. 10|Kel. Gondangdia|Jakarta|DKI Jakarta|10230
+Jl. Asia Afrika No. 45|Kel. Braga|Bandung|Jawa Barat|40111
+Jl. Cihampelas No. 120|Kel. Cipaganti|Bandung|Jawa Barat|40115
+Jl. Veteran No. 15|Kel. Penanggungan|Malang|Jawa Timur|65145
+Jl. Soekarno Hatta No. 200|Kel. Lowokwaru|Malang|Jawa Timur|65112
+Jl. Pemuda No. 27|Kel. Sekayu|Semarang|Jawa Tengah|50132
+Jl. Pandanaran No. 32|Kel. Mugassari|Semarang|Jawa Tengah|50141
+Jl. Airlangga No. 4|Kel. Airlangga|Surabaya|Jawa Timur|60286
+Jl. Pemuda No. 33|Kel. Embong Kaliasin|Surabaya|Jawa Timur|60271
+Jl. Urip Sumoharjo No. 12|Kel. Terban|Yogyakarta|DI Yogyakarta|55221
+Jl. Affandi No. 5|Kel. Mrican|Yogyakarta|DI Yogyakarta|55281
+Jl. Margonda Raya No. 28|Kel. Kemiri Muka|Depok|Jawa Barat|16424
+Jl. Raya Bogor Km. 30|Kel. Tugu|Depok|Jawa Barat|16518
+Jl. Teuku Umar No. 17|Kel. Hagu Barat|Lhokseumawe|Aceh|24351
+Jl. Merdeka No. 42|Kel. Merdeka|Medan|Sumatera Utara|20151
+Jl. Diponegoro No. 53|Kel. Klandasan Ilir|Balikpapan|Kalimantan Timur|76114
+Jl. Ahmad Yani No. 100|Kel. Pisang Selatan|Makassar|Sulawesi Selatan|90111
+Jl. Sudirman No. 66|Kel. 20 Ilir|Palembang|Sumatera Selatan|30129
+Jl. Imam Bonjol No. 8|Kel. Cinta Raja|Pekanbaru|Riau|28111
+Jl. Jenderal Sudirman No. 5|Kel. Kuripan|Banjarmasin|Kalimantan Selatan|70117
+Jl. Pahlawan No. 66|Kel. Titiwungen|Manado|Sulawesi Utara|95116
+Jl. Abdul Rahman Saleh No. 24|Kel. Kober|Purwokerto|Jawa Tengah|53131
+Jl. Prof DR Soepomo No. 12|Kel. Tahunan|Yogyakarta|DI Yogyakarta|55191
+Jl. Kertajaya No. 88|Kel. Manyar Sabrangan|Surabaya|Jawa Timur|60116
+Jl. Dago No. 99|Kel. Dago|Bandung|Jawa Barat|40134
+Jl. Dipati Ukur No. 35|Kel. Lebakgede|Bandung|Jawa Barat|40132

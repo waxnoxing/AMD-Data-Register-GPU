@@ -1,0 +1,22 @@
+# Address database for Singapore
+# Format: Address1|Address2|City|Province|Zip
+Blk 125 Sims Ave|Lavender|Singapore|Singapore|387451
+200 Jalan Sultan|Kallang|Singapore|Singapore|199019
+1 Rochor Canal Road|Rochor|Singapore|Singapore|188504
+101 Kitchener Road|Jalan Besar|Singapore|Singapore|208511
+35 Selegie Road|Selegie|Singapore|Singapore|188307
+8 Burn Road|Taiseng|Singapore|Singapore|369977
+21 Bedok North Street 1|Bedok|Singapore|Singapore|469659
+10 Tampines Central 1|Tampines|Singapore|Singapore|529536
+1 Woodlands Square|Woodlands|Singapore|Singapore|738069
+33 Sengkang West Avenue|Sengkang|Singapore|Singapore|797655
+51 Ang Mo Kio Avenue 3|Ang Mo Kio|Singapore|Singapore|569922
+2 Jurong East Street 21|Jurong East|Singapore|Singapore|609588
+1 Pasir Ris Central Street 3|Pasir Ris|Singapore|Singapore|519457
+81 Marine Parade Central|Marine Parade|Singapore|Singapore|449394
+301 Ubi Avenue 1|Ubi|Singapore|Singapore|400301
+9 Bishan Place|Bishan|Singapore|Singapore|579837
+30 Lorong 6 Toa Payoh|Toa Payoh|Singapore|Singapore|319404
+1 Yishun Street 23|Yishun|Singapore|Singapore|768415
+50 Choa Chu Kang North 6|Choa Chu Kang|Singapore|Singapore|689575
+1 Hougang Street 91|Hougang|Singapore|Singapore|538692

@@ -1,0 +1,18 @@
+[
+  "I am a CS student actively learning GPU programming with AMD ROCm and HIP. My laptop does not have a dedicated GPU, so AMD Dev Cloud is essential for completing my parallel computing assignments and building hands-on skills in GPU acceleration.",
+  "As a self-taught AI enthusiast, I want to explore deep learning using AMD GPUs with PyTorch ROCm. I have been following AMD's documentation to learn model training, but I need cloud GPU access to actually practice and build my first projects.",
+  "I am working on my undergraduate thesis in computer vision using YOLO and CNN architectures. Training these models requires significant GPU power that I cannot afford locally. AMD Dev Cloud would let me complete my research on schedule.",
+  "I am a student member of my university's AI research group. We focus on optimizing machine learning models for AMD GPUs using ROCm. I need cloud GPU access to contribute to our group's experiments and learn from hands-on practice.",
+  "I am learning to fine-tune large language models for a Malay language NLP project. Running inference and fine-tuning on AMD GPUs through HIP would let me experiment with different architectures without needing expensive hardware.",
+  "As a data science student, I need GPU acceleration for training neural networks on large datasets. My coursework involves TensorFlow and PyTorch, but my hardware limits how much I can actually learn. AMD Dev Cloud solves this gap.",
+  "I am building a personal portfolio of AI projects including image classification, GANs, and transformer models. Using AMD GPUs for training lets me learn the full ROCm stack while creating demo projects for job applications.",
+  "I enrolled in an online GPU computing course that uses AMD ROCm for parallel programming exercises. Without a GPU laptop, AMD Dev Cloud is my only way to follow along with the labs and complete the certificate program.",
+  "I am researching energy-efficient AI inference on AMD hardware for my final year project. Access to AMD GPUs in the cloud lets me benchmark and optimize my models on actual AMD silicon before deployment.",
+  "As a student developer, I want to contribute to open-source ROCm libraries. Understanding GPU kernel development requires hands-on experimentation with AMD hardware, which I can only do through a cloud GPU service like AMD Dev Cloud.",
+  "I am learning about diffusion models and generative AI for my capstone project. Training stable diffusion variants needs hours of GPU compute that exceed university lab quotas. AMD Dev Cloud would help me iterate faster.",
+  "I am part of a student competition team building an AI-powered drone navigation system. We use AMD GPUs for training computer vision models. Cloud access lets us train more models in parallel and meet our competition deadlines.",
+  "I want to master AMD ROCm ecosystem from the ground up — starting with HIP porting exercises and building up to custom kernel development. AMD Dev Cloud is the most practical way to get real GPU time for consistent daily learning.",
+  "I am a physics student running molecular dynamics simulations that benefit from GPU acceleration. Learning to use AMD GPUs for scientific computing through HIP prepares me for research roles that require HPC skills.",
+  "I am developing a real-time object detection application using YOLOv8 on AMD ROCm. After prototyping on CPU, I need GPU acceleration to test inference speed and optimize my model for practical deployment scenarios.",
+  "I am studying reinforcement learning and training AI agents for game environments. These simulations need massive parallel computation that only GPUs can provide. AMD Dev Cloud gives me the compute power to run multi-agent experiments."
+]
