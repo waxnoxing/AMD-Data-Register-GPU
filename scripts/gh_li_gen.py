@@ -8,6 +8,9 @@ Pipeline: GitHub Search API → dedup against sent → concurrent profile fetch
 (name + LinkedIn URL, retry/backoff) → auto-write tracker → AMD JSON.
 
 Optional: set GITHUB_TOKEN env to raise search rate-limit (5000/h vs 60/h).
+Token is READ at runtime from env only — never saved, never pushed.
+Mode auto: if GITHUB_TOKEN set/unset the script adapts. READ SKILL.md "GITHUB_TOKEN Mode" before exposing.
+Scopes needed (fine-grained): Read access to user profile. Write/full-repo token NOT allowed.
 """
 import sys, os, json, random, re, time, requests
 from pathlib import Path

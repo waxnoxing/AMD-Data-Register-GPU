@@ -39,6 +39,34 @@ python3 gh_li_gen.py
 ```
 Token = env only, never saved/pushed.
 
+## ⚠️ GITHUB_TOKEN Mode — pahami sebelum pakai
+
+Script **otomatis** pakai token kalau env `GITHUB_TOKEN` DISET. Kalau gak di-set → jalan normal (unauth). Pilihan: **tanpa token** dan **dengan token**, bedanya cuma 2 hal:
+
+| | Tanpa token (default) | Dengan `GITHUB_TOKEN` |
+|---|---|---|
+| Rate-limit search/api | **10 req/jam** (_shared AWS IP, diapakai banyak orang → bisa kehabisan mendadak) | **30 req/jam** search, **5000 req/jam** core |
+| Cukup untuk | **1 batch** (6 query) per jam | **banyak batch** tanpa nunggu reset jam |
+| Perlu setup | No | Ya — buat token dulu (lihat bawah) |
+| Resiko bocor | — | Aman kalau ikuti aturan bawah |
+
+**Kenapa dipakai:** GitHub API tanpa token nge-blokir keras (403 "rate limit exceeded"). Dengan token, masih gagal? Ini karena token dibuat **fine-grained** tapi **semua repo-resource dinonaktifkan** → search/users kena kategori. **Token harus punya izin `Read access to user profile`** (hak baca doang). **JANGAN pakai token write/full repo.**
+
+**Cara buat token (aman, scoped-minimal):**
+1. GitHub → **Settings → Developer settings → Fine-grained tokens → Generate new token**
+2. **Resource owner**: `waxnoxing`
+3. **Repository access**: `Public repositories (read-only)` → & setting:
+   ```
+   Permissions → Account permissions → User profile → Read
+   ```
+4. Copy token → **jangan kirim/echo/log ke repo atau file** → jalankan:
+   ```bash
+   export GITHUB_TOKEN='<token>'   # sesi ini doang, ilang setelah tutup shell
+   python3 gh_li_gen.py
+   ```
+
+**Aman dimanapun:** token cuma hidup di env shell saat run. Gak pernah ditulis file, gak masuk commit, gak di-push, gak di-log. Kalau ragu token bocor → revoke di GitHub (Settings → Tokens → Revoke) & bikin baru.
+
 ## Scripts
 
 | Script | Purpose |
