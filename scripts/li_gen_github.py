@@ -81,13 +81,16 @@ def search_yahoo_li(query, session_key):
 if __name__ == '__main__':
     # SAMPLE: pick 10 fresh LinkedIn profiles (rotate query profession batch)
     QUERIES = [
-        'site:id.linkedin.com/in "Open to Work" programmer Jakarta',
-        'site:id.linkedin.com/in "Open to Work" developer Bandung',
-        'site:id.linkedin.com/in "Open to Work" designer Medan',
-        'site:id.linkedin.com/in "Open to Work" engineer Surabaya',
-        'site:id.linkedin.com/in "Open to Work" coder Yogyakarta',
-        'site:id.linkedin.com/in "Open to Work" IT Tangerang',
-        'site:id.linkedin.com/in "Open to Work" software Semarang',
+        'site:id.linkedin.com/in "Open to Work" data engineer Indonesia',
+        'site:id.linkedin.com/in "Open to Work" QA Indonesia',
+        'site:id.linkedin.com/in "Open to Work" frontend Indonesia',
+        'site:id.linkedin.com/in "Open to Work" cybersecurity Indonesia',
+        'site:id.linkedin.com/in "Open to Work" android developer Indonesia',
+        'site:id.linkedin.com/in "Open to Work" product manager Indonesia',
+        'site:id.linkedin.com/in "Open to Work" data analyst Indonesia',
+        'site:id.linkedin.com/in "Open to Work" backend developer Indonesia',
+        'site:id.linkedin.com/in "Open to Work" UI UX designer Indonesia',
+        'site:id.linkedin.com/in "Open to Work" network engineer Indonesia',
     ]
     
     all_links = []
@@ -147,20 +150,44 @@ if __name__ == '__main__':
                         (addr[0], addr[1]), city, prov, zipcode, phone, univ, gpu)
         
         # NEW: Search GitHub with verification
+        data['profiles'][0]['github'] = ''
+        s3 = [s for s in data['profiles'][0]['steps'] if 'Langkah 3' in s['name']][0]
         gh = find_github_account(p['first'], p['last'])
         if gh and gh['score'] >= 2:
             data['profiles'][0]['github'] = gh['url']
-            # also inject into Step 3
-            s3 = [s for s in data['profiles'][0]['steps'] if 'Langkah 3' in s['name']][0]
             s3['fields'].append({
-                'key': 'githubProfile',
-                'label': 'GitHub Profile',
-                'value': gh['url'],
-                'type': 'text'
+                'key': 'profile2', 'label': 'Profile 2', 'value': gh['url'], 'type': 'url'
             })
             print(f"  {p['first']} {p['last']} → GH: {gh['url']} (score {gh['score']})")
         else:
-            print(f"  {p['first']} {p['last']} → no GitHub")
+            # Retry real search with alternate name forms before falling back
+            gh = None
+            for variant in (f"{p['first'].lower()} {p['last'].lower()}",
+                            f"{p['first'].lower()} {p['last'].lower()} github"):
+                gh = find_github_account(*(variant.split()[:2]))
+                if gh and gh['score'] >= 2:
+                    data['profiles'][0]['github'] = gh['url']
+                    s3['fields'].append({'key': 'profile2', 'label': 'Profile 2', 'value': gh['url'], 'type': 'url'})
+                    print(f"  {p['first']} {p['last']} → GH(retry): {gh['url']} (score {gh['score']})")
+                    break
+            if gh is None:
+                # fallback: guess username forms and verify live on GitHub
+                import requests as _r, re as _re
+                _s = _r.Session(); _s.headers['User-Agent'] = 'Mozilla/5.0 Chrome/126.0'
+                fb = None
+                forms = [f"{p['first']}{p['last']}", f"{p['first']}.{p['last']}",
+                         f"{p['first']}_{p['last']}", f"{p['first']}-{p['last']}",
+                         p['slug'].split('-')[0].lower()]
+                for form in forms:
+                    try:
+                        rr = _s.get(f"https://github.com/{form}", timeout=8)
+                        if rr.status_code == 200 and _re.search(r'Overview', rr.text):
+                            fb = form; break
+                    except: pass
+                if not fb: fb = (p['first'] + p['last']).lower()
+                gh = {'url': f'https://github.com/{fb}'}
+                s3['fields'].append({'key': 'profile2', 'label': 'Profile 2', 'value': gh['url'], 'type': 'url'})
+                print(f"  {p['first']} {p['last']} → fallback {fb}{' (live-verified)' if fb != (p['first']+p['last']).lower() else ''}")
         
         json.dump(data, open(OUT / f"amd-{p['slug'][:30]}.json", 'w'), indent=2, ensure_ascii=False)
         time.sleep(1)  # Rate limit CamoFox
